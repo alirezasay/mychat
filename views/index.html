@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<head>
+    <meta name="viewport" content="width=device-width" , initial-scale=1.0" >
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+     
+    <title>starrychat</title>
+    <link rel="shortcut icon" href="https://freesvg.org/img/Blue-Star.png" />
+    <style>
+        .kol {
+            background: url(https://asgsr.org/wp-content/uploads/2020/01/iStock-697020460-scaled.jpg);
+        }
+        .wellcome {
+            background-color:rgb(44, 32, 91);
+            margin-top: 10%;
+            margin-right: calc(50vw - 117px);
+            margin-left: calc(49vw - 117px);
+            border-radius:8px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            transition: 0.5s;
+text-align: center;
+color: azure;
+}
+.wellcome:hover{
+    background-color: rgb(0, 0, 99);transition: 0.5s;
+}
+.b{
+    margin-right: 27.5vw;
+float: right;
+border:slateblue solid 0.5px;
+background-color:rgb(138, 163, 203);
+height: 5vw;
+width: 8vw;
+font-size:large;
+font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+transition: 0.5s;
+border-radius:6px;
+}
+.bb {
+margin-left: 27.5vw;
+border:slateblue solid 0.5px;
+background-color:rgb(138, 163, 203);
+height: 5vw;
+width: 8vw;
+font-size:large;
+font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+transition: 0.5s;
+border-radius:6px;
+}
+
+.b:hover{
+    background-color: darkblue; transition: 0.5s;
+    color: antiquewhite;
+    border-radius:12px;
+}
+.bb:hover{
+    background-color: darkblue;
+    transition: 0.5s;color: antiquewhite;
+    border-radius:12px;
+}
+.ts{
+    color: bisque;
+    text-align: center;
+    background-color: midnightblue;
+    display: flex;
+justify-content: center;
+
+
+}
+.wellcom {
+margin-left: calc(50vw - 117px);
+color: blanchedalmond;
+text-align: center;
+}
+.in {
+width: 150px;
+}
+@media(width<=900px){
+.bb{
+    margin-left: calc(41vw - 117px)w;
+height:auto;
+width: auto;
+    background-color:rgb(138, 163, 203);
+}
+.b{
+    margin-right: calc(41vw - 117px)w;
+    float: right;
+height:auto;
+width: auto;
+    background-color:rgb(138, 163, 203); 
+}
+}
+    </style>
+</head>
+<body class="kol">
+    <h1 class="wellcome">Wellcome to starrychat</h1>
+<br><br><br><br><br><br><br><br><br>
+<button onclick="log()" class="bb">login</button>
+<button onclick="sign()" class="b">signup</button>
+    
+<br><br><br><br><br><br>
+<t class="ts">Contact me:
+    <br>
+    email:ali.sy5555@yahoo.com
+    <br>
+    telegram: @samansy
+    <br>
+    starrychat:admin
+</t>
+    <script>
+
+function log(){
+    window.location.assign("/users/login");
+}
+function sign(){
+    window.location.assign("/users/signup");
+}
+///////////////////////
+function getcookie(name){
+    var nmae =+ "=";
+    var decodecookie = decodeURIComponent(document.cookie);
+    var x= decodecookie.split(";");
+    var i;
+    var xx;
+    for(i=0;i<x.length;i++){
+xx= x[i];
+while(xx.charAt(0)==' '){
+    xx= xx.substring(1);
+
+}
+if(xx.indexOf(name)==0){
+    return xx.substring(name.length+1);
+}
+    }
+    return " ";
+}
+var mycheck= getcookie("login");
+if(mycheck!=" "){
+    window.location.assign('/users/login');
+}
+    </script>
+</body>
